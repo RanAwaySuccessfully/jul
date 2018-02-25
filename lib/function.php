@@ -1245,7 +1245,7 @@ function dofilters($p){
 
 	$p	= xss_clean($p);
 
-	$p	=preg_replace("'\[youtube\]([a-zA-Z0-9_-]{11})\[/youtube\]'si", '<iframe src="https://www.youtube.com/embed/\1" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>', $p);
+	$p	=preg_replace("'\[youtube\](?:https://(?:www\.)?youtu(?:\.be/|be\.com/watch\?v=))?([\w-]{11})\[/youtube\]'si", '<iframe src="https://www.youtube.com/embed/\1" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>', $p);
 
 
 	return $p;
